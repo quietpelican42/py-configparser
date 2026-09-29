@@ -1,0 +1,56 @@
+{
+  "name": "py-configparser",
+  "version": "0.1.0",
+  "description": "Read INI files exactly as CPython's configparser does: continuation lines, DEFAULT, interpolation, errors and write() output. For setup.cfg, tox.ini, .flake8, mypy.ini, .coveragerc and .pypirc.",
+  "keywords": [
+    "configparser",
+    "ini",
+    "python",
+    "setup.cfg",
+    "tox.ini",
+    "flake8",
+    "mypy",
+    "coveragerc",
+    "pypirc",
+    "parser"
+  ],
+  "license": "MIT",
+  "author": "__AUTHOR__",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/__GH_OWNER__/py-configparser.git"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20.6.0"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "LICENSE-python"
+  ],
+  "scripts": {
+    "test": "node --test \"test/*.test.ts\"",
+    "typecheck": "tsc --noEmit",
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "diff": "node scripts/diff.ts",
+    "diff:str": "node scripts/diff-str.ts",
+    "diff:corpus": "node scripts/corpus-diff.ts",
+    "bench": "node bench/incumbents.ts",
+    "fixture": "node scripts/make-fixture.ts",
+    "demo": "node examples/tools.ts",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build && npm run test:dist",
+    "test:dist": "node --test test/smoke.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.7.0"
+  }
+}
