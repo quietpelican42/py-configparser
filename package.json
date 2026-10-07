@@ -15,10 +15,10 @@
     "parser"
   ],
   "license": "MIT",
-  "author": "__AUTHOR__",
+  "author": "kofiadeyemiq",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/__GH_OWNER__/py-configparser.git"
+    "url": "git+https://github.com/quietpelican42/py-configparser.git"
   },
   "type": "module",
   "engines": {
